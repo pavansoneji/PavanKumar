@@ -1,0 +1,298 @@
+<style>
+    .main {
+  /* position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    text-align: center;
+}
+
+.main-heading {
+  color: #444;
+  text-transform: uppercase;
+}
+
+.main-heading-primary {
+  display: block;
+  font-size: 5.0rem;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation: moveInLeft 1s ease-out;
+}
+
+.main-heading-secondary {
+  font-family: sans-serif;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 31px;
+  color: rgb(45, 48, 89);
+  animation: moveInRight 1s ease-out;
+}
+.wrapper2 { 
+        float:left;
+        position: absolute;
+    }
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  
+  80% {
+    transform: translateX(10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  
+  80% {
+    transform: translateX(-10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+button{    
+    background: none;
+    border:solid;
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-family: 'Lato';
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    padding: 10%;
+    overflow: hidden;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+    color: white;
+}
+button span{
+    position: absolute;
+    display: block;
+}
+button span:nth-child(1){
+    height: 3px;
+    width:200px;
+    top:0px;
+    left:-200px;
+    background: linear-gradient(to right, rgba(0,0,0,0), white);
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span1 2s linear infinite;
+    animation-delay: 1s;    
+}
+
+@keyframes span1{
+    0%{
+        left:-200px
+    }
+    100%{
+        left:200px;
+    }
+}
+button span:nth-child(2){
+    height: 70px;
+    width: 3px;
+    top:-70px;
+    right:0px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), white);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span2 2s linear infinite;
+    animation-delay: 2s;
+}
+@keyframes span2{
+    0%{
+        top:-70px;
+    }
+    100%{
+        top:70px;
+    }
+}
+button span:nth-child(3){
+    height:3px;
+    width:200px;
+    right:-200px;
+    bottom: 0px;
+    background: linear-gradient(to left, rgba(0,0,0,0), black);
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    animation: span3 2s linear infinite;
+    animation-delay: 3s;
+}
+@keyframes span3{
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 200px;
+    }
+}
+
+button span:nth-child(4){
+    height:70px;
+    width:3px;
+    bottom:-70px;
+    left:0px;
+    background: linear-gradient(to top, rgba(0,0,0,0), black);
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    animation: span4 2s linear infinite;
+    animation-delay: 4s;
+}
+@keyframes span4{
+    0%{
+        bottom: -70px;
+    }
+    100%{
+        bottom:70px;
+    }
+}
+
+button:hover{
+    transition: all .5s;
+    transform: rotate(-3deg) scale(1.1);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+}
+button:hover span{
+    animation-play-state: paused;
+}
+h3{
+    color: gray;
+}
+</style>
+
+<body style="background: linear-gradient(to right, #525252, #CACCCB);">
+        <div class="wrapper2">
+            <a href="index.html"> 
+              <button>
+              HOME
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </a>
+          </div>
+    <div class="main">
+        <h1 class="main-heading">
+          <span class="main-heading-primary">RESUME</span>
+          <span class="main-heading-secondary">RESUME</span>
+        </h1>
+      </div>
+      <table style="width:52%; margin:0px auto; background:#ffffff5c;">
+          <tr>
+              <td>
+                  <span style="font-size: 44px;">PAVAN KUMAR</span><br/>
+                  <span style="color:rgb(61, 138, 253)">Game Programmer</span>
+              </td>
+              <td style="border-left:solid thin;">
+                  <h3>Details</h3>
+                  <span style="padding-left: 20px">
+                  +60164259628<br/>
+                  <span style="color: rgb(61, 138, 253);padding-left: 20px">pavan45_kumar@hotmail.com</span>
+                  </span>
+              </td>
+              
+          </tr>
+          <tr>              
+              <td style="color: gray"><img style="width:20px" src="images/icons/address.png"/> BUKIT JALIL, KUALA LUMPUR, MALAYSIA</td>
+              <td></td>
+          </tr>          
+          <tr>
+                <td style="border-left:solid thin;">
+                 <h1><img style="width:20px" src="images/icons/man-user.png"/> Profile</h1>
+                 <span style="font-size: 18px;"><span style="padding-left: 40px">To obtain a position that will provide an opportunity for me to server with accountability and </span><br/><span style="padding-left: 40px"> positivity influence an organization with my vast and diversely acquired proficiency in</span> <br/><span style="padding-left: 40px"><b>Game Programming</b></span></span>
+            </td>
+            <td style="border-left: solid thin;">                                
+                <h3>DATE OF BIRTH</h3>
+                <span style="padding-left: 40px">1990-02-06</span>
+                <h3>NATIONALITY</h3>
+                <span style="padding-left: 40px">Pakistan</span>
+                </span>
+            </td>
+          </tr>
+          <tr>
+                <td style="border-left:solid thin;padding-left: 10px;">
+                 <h1><img style="width:20px" src="images/icons/empHistory.png"/> Employment History</h1>                 
+                 <span style="font-size: 19px"><span style="padding-left: 40px">Game Programmer at Movingwalls Malaysia</span><br/><span style="padding-left: 40px; font-size:18px; color: rgb(61, 138, 253)"> Currently working</span></span>
+                 <ul style="padding-left: 90px">
+                     <li>Develop interactive billboard games.</li>
+                     <li>Develop AR interactive applications.</li>
+                     <li>Develop websites</li>
+                 </ul>
+            </td>
+            <td style="border-left: solid thin">
+                    <h2><img src="images/icons/global.png" style="width: 20px;"/> Social Profiles</h2>
+                    <img src="images/icons/linkedin.png" style="width: 16px;padding-left: 20px"/><a style="text-decoration: none; color:black" href="https://www.linkedin.com/in/pavan-kumar-18757264"> LinkedIn</a><br/>
+                    <img src="images/icons/facebook.png" style="width: 16px;padding-left: 20px"/><a style="text-decoration: none; color:black" href="https://www.facebook.com/pavan.kumar45"> Facebook</a><br/>
+                    <img src="images/icons/twitter.png" style="width: 16px;padding-left: 20px"/><a style="text-decoration: none; color:black" href="https://twitter.com/pavansoneji?s=08"> Twitter</a>                    
+            </td>
+            <tr>
+                    <td style="border-left:solid thin;padding-left: 10px;">          
+                            <span style="font-size: 19px"><span style="padding-left: 40px">PHP Programmer at BLUE-EX Karachi</span><br/><span style="padding-left: 40px; font-size:18px; color: rgb(61, 138, 253)"> 2015 - 2015</span></span>
+                            <ul style="padding-left: 90px">
+                                <li>Develop & Design websites</li>
+                                <li>Manage the call center based on (Asterisk * Elastix)</li>
+                            </ul>              
+                        <span style="font-size: 19px"><span style="padding-left: 40px">PHP Programmer at WizTech Karachi</span><br/><span style="padding-left: 40px; font-size:18px; color: rgb(61, 138, 253)"> 2013 - 2013</span></span>
+                        <ul style="padding-left: 90px">
+                            <li>Develop dynamic websites</li>
+                        </ul>
+                </td>
+                <td style="border-left: solid thin">
+                        <h2><img src="images/icons/skills.png" style="width: 20px"/> Skills</h2>
+                        <!-- <span st >Unity3D (C#)</span><br/> <span>UE4</span><br/> <span>C++</span><br/> <span>PHP</span><br/> <span>JavaScript</span> -->
+                        <ul style="padding-left: 40px">
+                            <li>Unity3D (C#)</li>
+                            <li>UE4</li>
+                            <li>C++</li>
+                            <li>PHP</li>
+                            <li>JavaScript</li>
+                        </ul>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td style="border-left:solid thin;padding-left: 10px;">
+                    <h1><img style="width:20px" src="images/icons/graduate-cap.png"/> Education</h1>
+                    <span style="font-size: 19px"><span style="padding-left: 40px">BSc. (Hons) in Game Technology, LIMKOKWING University, Malaysia</span><br/><span style="padding-left: 40px; font-size:18px; color: rgb(61, 138, 253)"> 2016 - 2018</span></span>
+                    <br/>
+                    <br/>
+                    <span style="font-size: 19px"><span style="padding-left: 40px">BSc. (Hons) in Information Technology, University of Sindh, Pakistan</span><br/><span style="padding-left: 40px; font-size:18px; color: rgb(61, 138, 253)"> 2010 - 2013</span></span>
+                </td>
+                <td style="border-left: solid thin">
+                    <h2><img src="images/icons/language.png" style="width: 20px"/> Languages</h2>
+                    <ul style="padding-left: 40px">
+                        <li>English</li>
+                        <li>Urdu/Hindi</li>
+                        <li>Sindhi</li>                        
+                    </ul>
+                </td>
+          </tr>
+          <tr>
+            <td style="border-left:solid thin;padding-left: 10px;">
+                <h1><img style="width:20px" src="images/icons/short-course.png"/> Short Course</h1>
+                <span style="font-size: 19px"><span style="padding-left: 40px">Computer Added Designing, K.T.D.M.C, Pakistan</span><br/><span style="padding-left: 40px; font-size:18px; color: rgb(61, 138, 253)"> 2009</span></span>                
+            </td>
+            <td></td>
+          </tr>
+      </table>
+      </body>

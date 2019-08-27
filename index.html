@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Caveat');
+
+.bg {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+.link {
+  position: absolute;
+  bottom: 2em;
+  left: 2em;
+}
+
+a {
+  font-family: sans-serif;
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+  color: #fff;
+}
+
+.link p {
+  font-family: 'Caveat', cursive;
+}
+
+.bg-wall {
+  background: linear-gradient(to right, #525252, #CACCCB);
+}
+
+.side-wall {
+  background: radial-gradient(at 0% 50%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0) 90%) left no-repeat, linear-gradient(to right, #CACCCB, #BFC1C0);
+  perspective: 1000px;
+  z-index: 20;
+}
+
+div[class$="-wall"] {
+  display: inherit;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.perspective {
+  transform: rotateY(-75deg) scaleX(5);
+  transform-origin: left;
+  mix-blend-mode: color-burn;
+  z-index: 10;
+}
+
+li {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  transform-origin: right;
+  transform: scaleX(0);
+  animation: paint .9s .3s linear both;
+  will-change: transform;
+}
+
+li:nth-child(1) {
+  background: #121619;
+}
+li:nth-child(2) {
+  background: #F8EB4A;
+  animation-delay: .4s;
+}
+li:nth-child(3) {
+  background: #E52588;
+  animation-delay: .5s;
+}
+li:nth-child(4) {
+  background: #1D9ED7;
+  animation-delay: .6s;
+}
+li:nth-child(5) {
+  background: rgb(215, 29, 29);
+  animation-delay: .6s;
+}
+
+.bg-wall ul {
+  align-items: flex-end;
+}
+.bg-wall li span:after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 0;
+  background: inherit;
+  height: 100%;
+  width: 50px;
+  transform: translateX(-100%);
+  clip-path: polygon(100% 0, 100% 100%, 98% 100%, 60% 50%, 98% 0);
+}
+.bg-wall li:nth-child(1) {
+  width: 50%;
+  /* z-index: 5; */
+  animation-delay: 1.2s;
+}
+.bg-wall li:nth-child(2) {
+  width: calc(50% + 3em);
+  /* z-index: 4; */
+  animation-delay: 1.3s;
+}
+.bg-wall li:nth-child(3) {
+  width: calc(50% + 6em);
+  /* z-index: 3; */
+  animation-delay: 1.4s;
+}
+.bg-wall li:nth-child(4) {
+  width: calc(50% + 3em);
+  /* z-index: 2; */
+  animation-delay: 1.5s;
+}
+
+.bg-wall li:nth-child(5) {
+  width: 50%;
+  /* z-index: 2; */
+  animation-delay: 1.3s;
+}
+
+.bg-wall span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: inherit;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.bg-wall li:before {
+  content: '';
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 102%;
+  height: 100%;
+  transform-origin: right bottom;
+  background: rgba(0,0,0,.4);
+  filter: blur(8px);
+  transform: rotate(-2.5deg);
+  z-index: 1;
+}
+
+
+@keyframes paint {
+  to {
+    transform: none;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+a:link {
+  outline: 0;
+}
+
+a {
+  transition: .2s ease-in-out;
+}
+
+h1, h2, h3, h4 {
+  margin: .3em 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: 100%;
+}
+#aboumeDiv{
+    width: 30%;    
+    margin: 0px auto;
+    background: transparent;
+    position: absolute;
+    z-index: 4;
+    top: 20%;
+    left: 2%;
+    line-height: 25px;
+    padding: 1%;
+}
+h1,p{
+    Color:white;
+}
+#myBtn{
+    background:none;
+    border:solid white;
+    padding: 2%;
+    color:white;
+    float:right;
+}
+.navHeadings{
+    color:white;
+    padding-top: 13px;
+}
+#more {display: none;}
+
+        </style>
+        <script>
+              document.body.addEventListener('click', () => {
+    // yes
+    document.querySelectorAll('*').forEach(el => {
+      el.style.animation = 'none';
+
+      setTimeout(() => {
+        el.style.animation = null;
+      }, 0);
+    })
+  })
+        </script>
+    </head>
+    <body>
+            <div id="aboumeDiv">
+                <h1>PAVAN KUMAR</h1><hr/>
+                <br/>
+                <h1>About Me</h1>
+                <br/>
+                <p>he video game has been a passion of mine from a very young age. I personally believe that programming is much more than just write code. My background is a PHP programmer but I am interested in games so I take the next step focus on games as a lifelong career.</p>
+                <br/>
+                <p>Back in 2013<span id="dots">...</span><span id="more">,I graduated from the "University of Sindh" with a degree "BS(Hons) in Information technology" and I worked as a PHP programmer for one and a half years.
+                <br/>
+                <br/>
+                Dec 2018, I've completed "BS(Hons) in Game Technology" from "LIMKOKWING University" and I finally started my career as Game Programmer in "Movingwalls" organization</p>
+                </span>
+                <button onclick="myFunction()" id="myBtn">Read more</button>
+            </div>
+            <div class="bg">                    
+                    <!-- <div class="link">
+                        
+                      <a target="_blank" rel="noreferrer noopener" href="http://brushfiredesign.ca/new/wp-content/uploads/2015/01/print-design.jpg">Inspiration source</a>
+                      <p>Issues with animation in Firefox</p>
+                    </div> -->
+                    
+                    <div class="bg-wall">
+                      <ul>
+                        <li><span class="navHeadings"><a href="workProjects.html">Professional Projects</a></span></li>
+                        <li><span class="navHeadings"><a style="color: black" href="universityProjects.html">University Projects</a></span></li>
+                        <li><span class="navHeadings"><a href="currentProj.html"> Boss Bricks <b>(ON)</b></a></span></li>
+                        <li><span class="navHeadings"><a style="color: black" href="resume.html"> Resume</a></span></li>
+                        <li><span class="navHeadings"><a style="color: black" href="contact.html"> Contact</a></span></li>
+                      </ul>
+                    </div>
+                    <div class="side-wall">
+                      <ul class="perspective">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                      </ul>
+                    </div>
+                  </div>
+    </body>
+    <script>
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less";
+            moreText.style.display = "inline";
+        }
+    }
+    </script>
+</html>
+
+<!-- 
+    Mai ap ko hyderabad say bahar job krnay k liya ijazat ni day sakta ho         
+-->

@@ -1,0 +1,334 @@
+<style>
+body{
+	font-weight:400;
+	text-align:center;
+	font-family:Tahoma,Geneva,sans-serif
+	}
+
+div,span{display:block;position:absolute}
+
+.container{
+	width:200px;
+	height:200px;
+	top:50%;
+	left:50%;
+	perspective:100%;
+	transform:translate(-50%,-50%)
+	}
+
+.box{
+	width:100px;
+	height:100px;
+	bottom:25px;
+	left:50px;
+	cursor:pointer;
+	transform-style:preserve-3d;
+	transform:rotateY(-45deg) rotateX(-15deg) rotate(15deg)
+	}
+
+.box [class*="side_"]{width:100%;height:100%}
+
+.box [class*="side_"]:not(.side_top),
+.side_top div
+	{background:linear-gradient(90deg,#d31027,#ea384d)}
+
+.side_top
+	{transform-style:preserve-3d;transform:rotateX(90deg) translate3d(0,0,50px)}
+
+.side_right{transform:rotateY(90deg) translate3d(0,0,50px)}
+.side_front{transform:translate3d(0,0,50px)}
+.side_back{transform:rotateY(180deg) translate3d(0,0,50px)}
+.side_bottom{transform:rotateX(-90deg) translate3d(0,0,50px)}
+.side_left{transform:rotateY(-90deg) translate3d(0,0,50px)}
+
+.cover_top{
+	width:100px;
+	height:50px;
+	top:0;
+	z-index:1;
+	transition:all .2s 1.4s ease;
+	transform:rotateX(0deg);
+	transform-origin:center top
+	}
+
+.cover_right{
+	width:50px;
+	height:100px;
+	right:0;
+	transition:all .2s 1.2s ease;
+	transform:rotateY(0deg);
+	transform-origin:center right
+	}
+
+.cover_bottom{
+	width:100px;
+	height:50px;
+	bottom:0;
+	z-index:1;
+	transition:all .2s 1s ease;
+	transform:rotateX(0deg);
+	transform-origin:center bottom
+	}
+
+.cover_left{
+	width:50px;
+	height:100px;
+	left:0;
+	transition:all .2s .8s ease;
+	transform:rotateY(0deg);
+	transform-origin:center left
+	}
+
+[class*="marquee"]{
+	width:105px;
+	height:50%;
+	top:50%;
+	overflow:hidden;
+	white-space:nowrap
+	}
+
+.marquee_right
+	{left:0;transform-origin:left;transform:perspective(1000px) rotateY(15deg) translate(0,-50%)}
+
+.marquee_front
+	{right:0;transform-origin:right;transform:perspective(1000px) rotateY(-15deg) translate(0,-50%)}
+
+[class*="text"]
+	{right:-150%;font-size:20px;line-height:2.5}
+
+.text_right
+	{color:#fff;text-shadow:1px 1px #000;animation:marquee 5s linear infinite}
+
+.text_front
+	{color:#000;text-shadow:1px 1px #fff;animation:marquee 5s 1.7s linear infinite}
+
+@keyframes marquee
+	{from{right:-150%}to{right:150%}}
+
+.side_front:before,
+.cover_top:before,
+.cover_bottom:before{
+	background-color:transparent;
+	background-image:
+	linear-gradient(90deg,#fd3352 100%,rgba(0,0,0,0)),
+	linear-gradient(90deg,#ffc93b 100%,rgba(0,0,0,0)),
+	linear-gradient(90deg,#63c486 100%,rgba(0,0,0,0)),
+	linear-gradient(90deg,#4690ff 100%,rgba(0,0,0,0));
+	background-position:5px top,10px top,15px top,20px top;
+	background-repeat:no-repeat;
+	background-size:5px 100%;
+	width:100%;
+	height:100%;
+	display:block;
+	position:absolute;
+	content:""
+	}
+
+.nav
+	{width:100%;height:100%;transform:rotateY(45deg) rotateX(15deg) rotate(-75deg)}
+
+.menu{
+	width:32px;
+	height:100%;
+	top:-60px;
+	left:70px;
+	transform-origin:bottom center
+	}
+
+.menu:nth-child(1){transform:rotate(30deg)}
+.menu:nth-child(2){transform:rotate(60deg)}
+.menu:nth-child(3){transform:rotate(90deg)}
+.menu:nth-child(4){transform:rotate(120deg)}
+
+.menu:before{
+	width:32px;
+	height:32px;
+	top:100%;
+	display:block;
+	position:absolute;
+	content:"";
+	border-radius:50%
+	}
+
+.menu:nth-child(1):before{background:url('https://image.flaticon.com/icons/svg/185/185981.svg');transition:all .2s .6s ease}
+
+.menu:nth-child(2):before{background:url('https://image.flaticon.com/icons/svg/185/185961.svg');transition:all .2s .4s ease}
+
+.menu:nth-child(3):before{background:url('https://image.flaticon.com/icons/svg/145/145807.svg');transition:all .2s .2s ease}
+
+.menu:nth-child(4):before{background:url('https://image.flaticon.com/icons/svg/185/185988.svg');transition:all .2s ease}
+
+.box:hover .cover_top{transition:all .2s ease;transform:rotateX(180deg)}
+
+.box:hover .cover_right{transition:all .2s .2s ease;transform:rotateY(180deg)}
+
+.box:hover .cover_bottom{transition:all .2s .4s ease;transform:rotateX(-180deg)}
+
+.box:hover .cover_left{transition:all .2s .6s ease;transform:rotateY(-180deg)}
+
+.box:hover .menu:before{top:0}
+.box:hover .menu:nth-child(1):before{transition:all .2s .8s ease}
+.box:hover .menu:nth-child(2):before{transition:all .2s 1s ease}
+.box:hover .menu:nth-child(3):before{transition:all .2s 1.2s ease}
+.box:hover .menu:nth-child(4):before{transition:all .2s 1.4s ease}
+
+
+button{    
+    background: none;
+    border:solid;
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-family: 'Lato';
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    padding: 10%;
+    overflow: hidden;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+    color: white;
+}
+button span{
+    position: absolute;
+    display: block;
+}
+button span:nth-child(1){
+    height: 3px;
+    width:200px;
+    top:0px;
+    left:-200px;
+    background: linear-gradient(to right, rgba(0,0,0,0), white);
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span1 2s linear infinite;
+    animation-delay: 1s;    
+}
+
+@keyframes span1{
+    0%{
+        left:-200px
+    }
+    100%{
+        left:200px;
+    }
+}
+button span:nth-child(2){
+    height: 70px;
+    width: 3px;
+    top:-70px;
+    right:0px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), white);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span2 2s linear infinite;
+    animation-delay: 2s;
+}
+@keyframes span2{
+    0%{
+        top:-70px;
+    }
+    100%{
+        top:70px;
+    }
+}
+button span:nth-child(3){
+    height:3px;
+    width:200px;
+    right:-200px;
+    bottom: 0px;
+    background: linear-gradient(to left, rgba(0,0,0,0), black);
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    animation: span3 2s linear infinite;
+    animation-delay: 3s;
+}
+@keyframes span3{
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 200px;
+    }
+}
+
+button span:nth-child(4){
+    height:70px;
+    width:3px;
+    bottom:-70px;
+    left:0px;
+    background: linear-gradient(to top, rgba(0,0,0,0), black);
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    animation: span4 2s linear infinite;
+    animation-delay: 4s;
+}
+@keyframes span4{
+    0%{
+        bottom: -70px;
+    }
+    100%{
+        bottom:70px;
+    }
+}
+
+button:hover{
+    transition: all .5s;
+    transform: rotate(-3deg) scale(1.1);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+}
+button:hover span{
+    animation-play-state: paused;
+}
+</style>
+<body style="background: linear-gradient(to right, #525252, #CACCCB);">
+ <div class="wrapper2">
+        <a href="index.html"> 
+          <button>
+          HOME
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </a>
+      </div>
+<div class="container">
+        <div class="box">
+            <div class="side_top">
+                <div class="cover_top"></div>
+                <div class="cover_right"></div>
+                <div class="cover_bottom"></div>
+                <div class="cover_left"></div>
+            </div>
+            <div class="side_right">
+                <span class="marquee_right">
+                    <span class="text_right">HOVER ME</span>
+                </span>
+            </div>
+            <div class="side_front">
+                <span class="marquee_front">
+                    <span class="text_front">HOVER ME</span>
+                </span>
+            </div>
+            <div class="side_back"></div>
+            <div class="side_bottom"></div>
+            <div class="side_left"></div>
+            <div class="nav">
+                <span id="fb" class="menu" onclick="openLink('https://www.facebook.com/pavan.kumar45')"></span>
+                <span id="tw" class="menu" onclick="openLink('https://twitter.com/pavansoneji?s=08')"></span>
+                <span id="ln"class="menu"  onclick="openLink('https://www.linkedin.com/in/pavan-kumar-18757264')"></span>
+                <span id="wp" class="menu" onclick="openLink('https://wa.me/60164259628')"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openLink(url){            
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+    </script>        
+    <!-- This is not part of Pen -->
+    <a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank" style="color:#000"></a>
+
+</body>

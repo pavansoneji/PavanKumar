@@ -1,0 +1,578 @@
+<style>
+.main {
+  /* position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    text-align: center;
+}
+
+.main-heading {
+  color: #444;
+  text-transform: uppercase;
+}
+
+.main-heading-primary {
+  display: block;
+  font-size: 5.0rem;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation: moveInLeft 1s ease-out;
+}
+
+.main-heading-secondary {
+  font-family: sans-serif;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 31px;
+  color: rgb(45, 48, 89);
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  
+  80% {
+    transform: translateX(10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  
+  80% {
+    transform: translateX(-10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.banner {
+    margin: 20px 40px;    
+    background: #EDEDED;
+    border: solid 2px #AAA;
+    box-shadow: 0 0 8px #aaa;
+    border-radius: 0 0 5px 5px;
+}
+
+.banner h3 {
+    padding: 15px 5px;
+    margin: 10px -20px;
+    border: solid 3px #AAA;
+    position:relative;
+    font-weight: normal;
+    font-size: 20px;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    text-align: center;
+    border-radius: 3px;
+    
+    background: #efefef;
+    background: linear-gradient(top, #efefef, #dfdfdf);
+    
+}
+
+.banner h3:after, .banner h3:before {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    background: #555;
+    border:solid 2px #aaa;
+    width: 25px;
+    height: 20px;
+    z-index: -1;
+}
+
+.banner h3:after {
+     left: 2px;
+     transform: rotate(120deg);
+}
+
+.banner h3:before {
+    right: 2px;
+    transform: rotate(60deg);
+}
+
+.banner-content {
+    padding: 10px 18px;
+    margin: 12px;
+    font-size: 18px;
+    font-family: Georgia;
+    border: solid 4px #e3e3e3;
+}
+
+.banner-thumb img {
+    padding-left: 20px;
+    padding-bottom: 20px;   
+}
+
+.banner-footer {
+   clear:both;   
+}
+.slideImage{
+  width: 350px;
+}
+.wrapper { 
+        background:#EFEFEF; 
+        box-shadow: 1px 1px 10px #999; 
+        margin: auto; 
+        text-align: center; 
+        position: relative;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        margin-bottom: 20px !important;        
+        padding-top: 5px;
+    }
+    .scrolls { 
+        overflow-x: scroll;
+        overflow-y: hidden;   
+        white-space:nowrap
+    } 
+    .imageDiv img { 
+        box-shadow: 1px 1px 10px #999; 
+        margin: 2px;
+        max-height: 50px;
+        cursor: pointer;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    vertical-align:top;
+    }
+    .wrapper2 { 
+        float:left;
+        position: absolute;
+    }
+    .scrolls { 
+        overflow-x: scroll;
+        overflow-y: hidden;   
+        white-space:nowrap
+    } 
+    .imageDiv img { 
+        box-shadow: 1px 1px 10px #999; 
+        margin: 2px;
+        max-height: 50px;
+        cursor: pointer;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    vertical-align:top;
+    }
+    
+button{    
+    background: none;
+    border:solid;
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-family: 'Lato';
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    padding: 10%;
+    overflow: hidden;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+    color: white;
+}
+button span{
+    position: absolute;
+    display: block;
+}
+button span:nth-child(1){
+    height: 3px;
+    width:200px;
+    top:0px;
+    left:-200px;
+    background: linear-gradient(to right, rgba(0,0,0,0), white);
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span1 2s linear infinite;
+    animation-delay: 1s;    
+}
+
+@keyframes span1{
+    0%{
+        left:-200px
+    }
+    100%{
+        left:200px;
+    }
+}
+button span:nth-child(2){
+    height: 70px;
+    width: 3px;
+    top:-70px;
+    right:0px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), white);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span2 2s linear infinite;
+    animation-delay: 2s;
+}
+@keyframes span2{
+    0%{
+        top:-70px;
+    }
+    100%{
+        top:70px;
+    }
+}
+button span:nth-child(3){
+    height:3px;
+    width:200px;
+    right:-200px;
+    bottom: 0px;
+    background: linear-gradient(to left, rgba(0,0,0,0), black);
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    animation: span3 2s linear infinite;
+    animation-delay: 3s;
+}
+@keyframes span3{
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 200px;
+    }
+}
+
+button span:nth-child(4){
+    height:70px;
+    width:3px;
+    bottom:-70px;
+    left:0px;
+    background: linear-gradient(to top, rgba(0,0,0,0), black);
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    animation: span4 2s linear infinite;
+    animation-delay: 4s;
+}
+@keyframes span4{
+    0%{
+        bottom: -70px;
+    }
+    100%{
+        bottom:70px;
+    }
+}
+
+button:hover{
+    transition: all .5s;
+    transform: rotate(-3deg) scale(1.1);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+}
+button:hover span{
+    animation-play-state: paused;
+}
+</style>
+<body style="background: linear-gradient(to right, #525252, #CACCCB);">
+    <div class="wrapper2">
+        <a href="index.html"> 
+          <button>
+          HOME
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </a>
+      </div>
+<div class="main">
+    <h1 class="main-heading">
+      <span class="main-heading-primary">University</span>
+      <span class="main-heading-secondary">projects</span>
+    </h1>
+  </div>
+  <div class="banner">
+    <h3 style="font-size: 50px;">NEON TAG <img src="images/ue4_logo.png" style="width:150px; float: left;"/><img src="images/pc_logo.png" style="width:80px; float: right;"/></h3> 
+    
+    <div class="banner-content">
+        <div class="banner2-thumb">
+          <div class="wrapper">
+            <div class="scrolls">              
+              <img src='images/neonTag/title.png' class="slideImage" />
+              <img src='images/neonTag/menu.png' class="slideImage" />
+              <img src='images/neonTag/poster.png' class="slideImage" />
+              <img src='images/neonTag/gameplay.png' class="slideImage" />
+              <img src='images/neonTag/stage.jpg' class="slideImage" />
+            </div>
+        </div>
+        </div>
+        <div class="banner-description">            
+            Neon Tag is a FPS (First person shooter) Multiplayer, Action Sport Game. That focuses on combat Multiplayer Gameplay in a virtual digital world experience. 
+            <br/>
+            This is a Sci-fi First person shooter, multiplayer game, it take characteristics from first person shooter games, and real life laser tag game.
+            <br/>              
+            <h4>Mechanics:</h4>
+            <ul>
+              <li>Health Box.</li>                
+              <li>Floating platforms.</li>
+              <li>Mirror walls.</li>
+              <li>Walk, sprint.</li>
+              <li>Jump.</li>
+              <li>Shoot projectiles.</li>
+            </ul>
+            <h4>Concept:</h4>
+            <p>
+              Neon Tag is a FPS (First person shooter) Multiplayer, Action Sport Game. That focuses on combat Multiplayer Gameplay in a virtual digital world experience. Where player tries to tag other players in the arena, the last player stands win the game, in an action fast-Paced gameplay, with a high speed futuristic neon powered guns. In order to win the game, the player must stay the last online(alive) player. This game is inspired by the real life Laser tag game.
+            </p>
+            
+        </div>
+        <div class='banner-footer' style="text-align:center">
+            
+        </div>
+        <br class='clear' />
+    </div>
+</div>
+
+
+
+  <div class="banner">
+      <h3 style="font-size: 50px;">SPACE RUNNER <img src="images/ue4_logo.png" style="width:150px; float: left;"/><img src="images/pc_logo.png" style="width:80px; float: right;"/></h3> 
+      
+      <div class="banner-content">
+          <div class="banner2-thumb">
+              
+          </div>
+          <div class="banner-description">            
+              The player goal is to survive, make the high score, shoot enemies and save himself from enemy's projectiles and obstacles.
+              <br/>
+              The space runner is my 5th-semester group project at LIMKOKWING University. This game is an endless side scroll game made by UE4 using blueprints I did all the programmatic work in this game.
+              <br/>              
+              <h4>Mechanics:</h4>
+              <ul>
+                <li>Auto forward movement.</li>                
+                <li>Multiple jumps.</li>
+                <li>Enemy generate system.</li>
+                <li>Platform generate system.</li>
+                <li>Aim the gun point on the mouse position on some angle.</li>
+                <li>Shoot projectiles.</li>
+              </ul>
+              <h4>Enemies list:</h4>
+              <ul>
+                <li><b>Robotic Tank:</b> Range attack.</li>
+                <li><b>Robotic drown:</b> Range attack.</li>                
+              </ul>
+
+              <h4>AI Mechanics:</h4>
+              <ul>
+                <li>Robotic tank moves on the ground and aim the player and shoot a projectile towards the player.</li>
+                <li>Robotic drown fly and follow the player y position and attach the player by using the gun.</li>                
+              </ul>
+          </div>
+          <div class='banner-footer' style="text-align:center">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/QOmDcWs8f8U?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <br class='clear' />
+      </div>
+  </div>
+
+
+
+
+  <div class="banner">
+      <h3 style="font-size: 50px;">STRANGERS IN TOWN <img src="images/unity_logo.png" style="width:150px; float: left;"/><img src="images/pc_logo.png" style="width:80px; float: right;"/></h3> 
+      
+      <div class="banner-content">
+          <div class="banner2-thumb">
+              
+          </div>
+          <div class="banner-description">            
+              The character is riding his defensively covered vehicle over his town, he will likely decimate all adversaries and free his town from the outsiders.
+              <br/>
+              The STRANGERS IN TOWN is University group project I programmed all the mechanics of game this game is also made by unity game engine and based on one round which end on a chase track.
+              <br/>              
+              <h4>Mechanics:</h4>
+              <ul>
+                <li>Horizontal movement.</li>
+                <li>Boost for move faster.</li>
+                <li>Fly (Horizontal + Vertical)</li>
+                <li>Aim the gun point on the mouse position.</li>
+                <li>Shoot projectiles.</li>
+              </ul>
+              <h4>Enemies list:</h4>
+              <ul>
+                <li><b>Butterfly:</b> Range attack and fly.</li>
+                <li><b>Worm:</b> Range attack.</li>                
+              </ul>
+
+              <h4>AI Mechanics:</h4>
+              <ul>
+                <li>Butterfly follow the player.</li>
+                <li>Butterfly shoot projectiles which track the player.</li>                
+              </ul>
+          </div>
+          <div class='banner-footer' style="text-align:center">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/nIwjTRMrvec?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <br class='clear' />
+      </div>
+  </div>
+
+
+
+
+
+  <div class="banner">
+      <h3 style="font-size: 50px;">LOYAL FIGHT <img src="images/unity_logo.png" style="width:150px; float: left;"/><img src="images/pc_logo.png" style="width:80px; float: right;"/></h3> 
+      
+      <div class="banner-content">
+          <div class="banner2-thumb">
+              
+          </div>
+          <div class="banner-description">            
+              Loyal Fight is a fighting game. The player has to collect all the keys for opening the boss level door.              
+              <br/>
+              The loyal fight is also my 3rd semester at LIMKOKWING University I used the content from the internet in the game because it was a solo project. The game made by using a unity3D game engine. 
+              <br/>
+              <h4>Mechanics:</h4>
+              <ul>
+                <li>Walking, running and single jump</li>
+                <li>Kick and punch collisions</li>
+                <li>Hold to special kick move</li>                                
+                <li>Enemies appear on a certain radius.</li>
+                <li>Player fall away when get hit.</li>
+              </ul>
+              <h4>Enemies List:</h4>
+              <ul>
+                <li><b>Skull:</b> Melee attack.</li>
+                <li><b>Dracula:</b> Melee attack.</li>
+                <li><b>Snow Man:</b> Range attack</li>
+                <li><b>Evil Ryu:</b> Powerful range attack.</li>
+              </ul>
+
+              <h4>AI Mechanics:</h4>
+              <ul>
+                <li>Skull enemy move on a platform without falling.</li>
+                <li>Skull enemy turn back if the player is behind.</li>
+                <li>Skull enemy attack when player is near.</li>
+                <li>Dracula enemy perform melee attack when player is near him.</li>                
+                <li>Snow man enemy perform a range attach</li>
+                <li>Boss move and jump from one platform to another platform. Perform a powerful range attack.</li>
+              </ul>
+          </div>
+          <div class='banner-footer' style="text-align:center">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/qREjktevhjk?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <br class='clear' />
+      </div>
+  </div>
+
+  <div class="banner">
+      <h3 style="font-size: 50px;">SKY SHOOTER <img src="images/unity_logo.png" style="width:150px; float: left;"/><img src="images/pc_logo.png" style="width:80px; float: right;"/></h3> 
+      
+      <div class="banner-content">
+          <div class="banner2-thumb">
+              
+          </div>
+          <div class="banner-description">            
+              Sky Shooter is shot‘em up game. Player have to shoot enemies and dodge the enemies projectiles projectiles
+              <br/>
+              Sky Shooter is my 3rd-semester project at LIMKOKWING University. The game made by using unity engine and C# scripts. It is an endless PC game.
+              <br/>
+              <h4>Mechanics:</h4>
+              <ul>
+                <li>Endless scroll background.</li>
+                <li>Auto shoot projectiles.</li>
+                <li>Hold shoot projectiles.</li>
+                <li>Power up appear for specific time.</li>
+                <li>Poser up projectiles last long for 10 seconds.</li>
+                <li>Random enemies generate.</li>
+              </ul>
+              <h4>AI Mechanics:</h4>
+              <ul>
+                <li>Enemy shoot towards player position.</li>
+              </ul>
+          </div>
+          <div class='banner-footer' style="text-align:center">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/eHdK8I57C1o?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <br class='clear' />
+      </div>
+  </div>
+
+  
+  <div class="banner">
+      <h3 style="font-size: 50px;">WATCH OUT <img src="images/unity_logo.png" style="width:150px; float: left;"/><img src="images/pc_logo.png" style="width:80px; float: right;"/></h3> 
+      
+      <div class="banner-content">
+          <div class="banner2-thumb">
+              
+          </div>
+          <div class="banner-description">            
+              WatchOut is a very simple game just watch out the traps and the game speed will be increased after every specific time. 
+              <br/>
+              Watchout is my 2nd-semester project at LIMKOKWING University. The game made by using unity engine and C# scripts. It is an endless PC game.
+              <br/>
+              <h4>Mechanics:</h4>
+              <ul>
+                <li>Random background and music.</li>
+                <li>Single and double jump for avoiding traps</li>
+                <li>Random platform generate</li>
+              </ul>
+          </div>
+          <div class='banner-footer' style="text-align:center">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/1RJax0hjcGc?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <br class='clear' />
+      </div>
+  </div>
+  
+<div class="banner">
+    <h3 style="font-size: 50px;">HEXARAGE (BOARD GAME)</h3> 
+    
+    <div class="banner-content">
+        <div class="banner-thumb">
+            <div class="wrapper">
+                <div class="scrolls">
+                  <img src='images/hexarage_home.jpg' class="slideImage" />
+                  <img src='images/hexarage_2.jpg' class="slideImage"/>
+                  <img src='images/hexarage_3.jpg' class="slideImage"/>
+                  <img src='images/hexarage_4.jpg' class="slideImage"/>
+                  <img src='images/hexarage_5.jpg' class="slideImage"/>
+                  <img src='images/hexarage_6.jpg' class="slideImage"/>
+                  <img src='images/hexarage_7.jpg' class="slideImage"/>
+                  <img src='images/hexarage_8.jpg' class="slideImage"/>
+                  <img src='images/hexarage_9.jpg' class="slideImage"/>
+                  <img src='images/hexarage_10.jpg' class="slideImage"/>
+                  <img src='images/hexarage_11.jpg' class="slideImage"/>
+                  <img src='images/hexarage_12.jpg' class="slideImage"/>
+                </div>
+            </div>
+        </div>
+        <div class="banner-description">            
+            Hex Rage is a 
+            turn
+            -
+            based
+            tactics game for either 2 or 3 players in which the goal is to use 
+            all the items and abilities the players acquire during the course of the game to stop the 
+            enemy forces from winning.
+            This game includes some cards such as 
+            power cards, ability cards and trap cards.
+        </div>
+        <br/>
+        <div class='banner-footer'>
+          <a href="Files/HexaRageGameRuleBook.pdf" download>Click here</a> to download PDF rule book
+        </div>
+        <br class='clear' />
+    </div>
+</div>
+</body>​
+  
